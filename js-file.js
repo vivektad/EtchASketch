@@ -1,10 +1,10 @@
-let D_BOXES = 30;
-let D_COLOR = 'black';
+let D_BOXES = 12;
+let D_COLOR = 'gold';
 let D_MODE = 'color';
 
-let mode = 'color';
-let color = 'black';
-let numOfBoxes = 30;
+let mode = D_MODE;
+let color = D_COLOR;
+let numOfBoxes = D_BOXES;
 
 let boxs = document.getElementById('boxes');
 let grid = document.querySelector('.grid-container');
@@ -62,7 +62,7 @@ range.addEventListener('change', (e) => {
     updateGrid(e.target.value);
 })
 
-rgb.addEventListener('change', (e) => changeColor(e.target.value))
+rgb.addEventListener('click', (e) => changeColor(e.target.value))
 
 clear.addEventListener('click', () => clearAll())
 
