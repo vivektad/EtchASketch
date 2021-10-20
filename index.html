@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Source+Sans+Pro|Roboto">
+    <link rel="stylesheet" href="styles.css">
+    <title>EtchASketch</title>
+</head>
+<body>
+    <h1> Etch-A-Sketch</h1>
+    <div class="main">
+        <div class="sidebar">
+            <input type="color" id="colorPicker", value="#222222"></input>
+            <button> Use My Colour</button>
+            <button> Rainbow Mode</button>
+            <button> Clear Selections</button>
+            <div class="slidecontainer">
+                <p>No. of Boxes</p>
+                <p id='#boxes'></p>
+                <input type="range" min="8" max="100" value="50" class="slider" id="myRange">
+            </div>
+        </div>
+        <div class="grid-container"></div>    
+    </div>
+</body>
+</html>

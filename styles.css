@@ -1,0 +1,110 @@
+* {
+    background-color: #d6e4ec;
+}
+
+h1 {
+    padding: 50px 0px 0px;
+    font-family: "Source+Sans+Pro", sans-serif;
+    text-align: center;
+    font-size: 60px;
+}
+
+p {
+    font-family: "Roboto", sans-serif;
+    text-align: center;
+}
+  
+/* The slider itself */
+.slider {
+    -webkit-appearance: none;  /* Override default CSS styles */
+    appearance: none;
+    width: 100%; /* Full-width */
+    height: 10px; /* Specified height */
+    background: #ffffff; /* Grey background */
+    outline: none; /* Remove outline */
+    opacity: 0.7; /* Set transparency (for mouse-over effects on hover) */
+    -webkit-transition: .2s; /* 0.2 seconds transition on hover */
+    transition: opacity .2s;
+}
+
+/* Mouse-over effects */
+.slider:hover {
+    opacity: 1; /* Fully shown on mouse-over */
+}
+
+/* The slider handle (use -webkit- (Chrome, Opera, Safari, Edge) and -moz- (Firefox) to override default look) */
+.slider::-webkit-slider-thumb {
+    -webkit-appearance: none; /* Override default look */
+    appearance: none;
+    width: 15px; /* Set a specific slider handle width */
+    height: 15px; /* Slider handle height */
+    background: #000000; /* Green background */
+    cursor: pointer; /* Cursor on hover */
+}
+
+.slider::-moz-range-thumb {
+    width: 15px; /* Set a specific slider handle width */
+    height: 15px; /* Slider handle height */
+    background: #000000; /* Green background */
+    cursor: pointer; /* Cursor on hover */
+}
+
+.main {
+    justify-content: center;
+    max-width: 720px;
+    margin: 0px auto;
+    display: flex;
+    flex-direction: row;
+    gap: 30px;
+    padding: 30px;
+}
+
+.sidebar {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 20px;
+}
+
+.slidecontainer {
+    width: 100%; /* Width of the outside container */
+}
+
+button {
+    background-color: #e7e4e4;
+    font-size: 12px;
+    padding: 15px;
+    border-radius: 10px;
+    border-style: none;
+    box-shadow: 2px 2px 8px #777575;
+}
+
+button:hover {
+    background-color: #e4bd75;
+    transform: scale(1.05);
+}
+
+#colorPicker  {
+    align-self: center;
+    height: 40px;
+    width: 40px;
+    border: none;
+    border-radius: 50%;
+}
+
+.grid-container {
+    background-color: #ffffff;
+    box-shadow: 2px 2px 8px #777575;
+    display: grid;
+    width: 500px;
+    height: 500px;
+    flex: 1;
+}
+
+
+input[type='color']::-webkit-color-swatch {
+    border-radius: 50%;
+    border: none;
+    box-shadow: 2px 2px 8px #777575;
+}
