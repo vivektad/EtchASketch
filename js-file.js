@@ -1,30 +1,71 @@
-let D_BOXES = 50;
+let D_BOXES = 30;
 let D_COLOR = 'black';
 let D_MODE = 'color';
+
+let mode = 'color';
+let color = 'black';
+let numOfBoxes = 30;
+
 let boxs = document.getElementById('boxes');
 let grid = document.querySelector('.grid-container');
 let range = document.getElementById('myRange');
-let color = document.getElementById('#color');
-let rainbow = document.getElementById('#rainbow');
-let clear = document.getElementById('#clear');
+let colorMode = document.getElementById('color');
+let rainbowMode = document.getElementById('rainbow');
+let clear = document.getElementById('clear');
+let rgb = document.getElementById('colorPicker');
 
 function createGrid(x) {
     grid.style['grid-template-columns'] = `repeat(${x}, 1fr)`;
     grid.style['grid-template-rows'] = `repeat(${x}, 1fr)`
-    for (let i = 0; i < x; i++) {
+    for (let i = 0; i < x*x; i++) {
         let box = document.createElement('div');
+        box.addEventListener('mouseover', changeBoxColor)
         grid.appendChild(box);
     }
 }
-createGrid(50);
+createGrid(D_BOXES);
+
+function changeBoxColor() {
+    if (mode != 'rainbow') {
+        this.style['background-color'] = color;
+    } else {
+        this.style['background-color'] = '#' + Math.floor(Math.random()*16777215).toString(16);
+    }
+}
 
 function updateBoxes(x) {
+    numOfBoxes = x;
     boxs.innerHTML = x + ' x ' + x;
 }
 
-range.addEventListener("mousemove", (e) => {
-    console.log(e.target.value);
-    updateBoxes(e.target.value);
-})
-range.addEventListener('change', (e) => updateGrid(e.target.value));
+function updateGrid(x) {
+    numOfBoxes = x;
+    grid.innerHTML = '';
+    createGrid(x);
+}
 
+function changeColor(colorSelected) {
+    color = colorSelected;
+    rgb.style.value = colorSelected;
+}
+
+function clearAll() {
+    color = D_COLOR;
+    mode = D_MODE;
+    updateGrid(numOfBoxes);
+}
+
+// range.addEventListener('mousemove', (e) => {  
+// })
+range.addEventListener('change', (e) => {
+    updateBoxes(e.target.value);
+    updateGrid(e.target.value);
+})
+
+rgb.addEventListener('change', (e) => changeColor(e.target.value))
+
+clear.addEventListener('click', () => clearAll())
+
+colorMode.addEventListener('click', () => mode = 'color')
+
+rainbowMode.addEventListener('click', () => mode = 'rainbow')

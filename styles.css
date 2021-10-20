@@ -78,6 +78,7 @@ button {
     border-radius: 10px;
     border-style: none;
     box-shadow: 2px 2px 8px #777575;
+    width: 150px;
 }
 
 button:hover {
