@@ -81,8 +81,8 @@ button {
 }
 
 button:hover {
-    background-color: #e4bd75;
     transform: scale(1.05);
+    cursor: pointer;
 }
 
 #colorPicker  {
@@ -102,9 +102,20 @@ button:hover {
     flex: 1;
 }
 
+.grid-container > div {
+    background-color: #ffffff;
+}
+
 
 input[type='color']::-webkit-color-swatch {
     border-radius: 50%;
     border: none;
     box-shadow: 2px 2px 8px #777575;
+    cursor: pointer;
 }
+
+input[type='color']::-webkit-color-swatch:hover {
+    transform: scale(1.05);
+    cursor: pointer;
+}
+
